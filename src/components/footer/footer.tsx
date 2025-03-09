@@ -5,8 +5,14 @@ const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <p>© 2025 Магазн шнюка. Все права защищены шнюком.</p>
       <div className={styles.socialLinks}>
-        <a href="#">Instagram</a> | <a href="#">Facebook</a> |
-        <a href="#"> Twitter</a>
+        <a 
+        href="https://t.me/StanislavNeshik" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className={styles.linkStyle}
+      >
+        Написать в Telegram
+      </a>
       </div>
     </footer>
   );

@@ -10,19 +10,21 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart(state, action: PayloadAction<Cart>) {
+    addToCart(state, action: PayloadAction<Product>) {
       const newProduct = action.payload;
       const existingProduct = state.items.find(
         (item) => item.productName === newProduct.productName
       );
 
+      // разобраться как работает блок if снизу
+      
       if (existingProduct) {
-        existingProduct.productCount += 1; // Увеличиваем количество, если товар уже есть в корзине
+        existingProduct.productCount += 1; 
       } else {
-        state.items.push({ ...newProduct, productCount: 1 }); // Добавляем новый товар в корзину
+        state.items.push({ ...newProduct, productCount: 1 }); 
       }
 
-      state.totalAmount += newProduct.productPrice; // Обновляем общую стоимость
+      state.totalAmount += newProduct.productPrice; 
     },
 
     removeFromCart(state, action: PayloadAction<Product>) {
